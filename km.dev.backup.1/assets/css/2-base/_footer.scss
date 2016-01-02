@@ -1,0 +1,10 @@
+footer {
+   padding: 20px 0;
+   background: $primary;
+   height: 200px;
+   z-index: 3;
+   color: white;
+   p,a {
+      font-weight: 300;
+   }
+}

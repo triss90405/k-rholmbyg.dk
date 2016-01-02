@@ -1,0 +1,66 @@
+#contact {
+   background: url("/assets/img/bg2.png");
+   .content {
+      margin-top: 120px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid $primary;
+      border-radius: 3px;
+      padding: 20px;
+      h1 {
+         margin: 0px;
+      }
+   }
+   form {
+      margin-top: 120px;
+      input[type=text], textarea {
+         border-radius: 3px;
+         width: 100%;
+         background: rgba(255,255,255,0.55);
+         border: 1px solid $primary;
+         margin: 0 0 20px 0;
+         padding: 10px;
+         font-size: 1rem;
+         resize: none;
+         overflow: auto;
+         &:focus {
+            outline: 0;
+            border-color: $action;
+         }
+      }
+      .button {
+         width: 100%;
+      }
+   }
+
+   .map {
+      position: relative;
+      margin-top: 50px;
+      .map-overlay {
+         position: absolute;
+         top: 0;
+         left: 120px;
+         height: 100%;
+         width: 350px;
+         background: lighten(rgba(197,20,0,0.75), 13%);
+         padding: 10px;
+         @media (max-width: 768px) {
+            left: 0;
+            background: rgba(228,73,28,0.8);
+            width: 100%;
+            text-align: center;
+         }
+         h1 {
+            color: white;
+            text-shadow: 1px 1px black;
+         }
+         h2 {
+            color: white;
+            text-shadow: 1px 1px black;
+            span {
+               font-weight: 400;
+            }
+         }
+
+      }
+   }
+}

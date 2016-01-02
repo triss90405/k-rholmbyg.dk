@@ -1,0 +1,201 @@
+// Navigation
+nav {
+   @include transition(0.3s);
+   background: $background;
+   -webkit-box-shadow: 0px -3px 15px 2px rgba(0,50,70,1);
+   -moz-box-shadow: 0px -3px 15px 2px rgba(0,50,70,1);
+   box-shadow: 0px -3px 15px 2px rgba(0,50,70,1);
+   position: fixed;
+   width: 100%;
+   height: 75px;
+   z-index: 3;
+   margin: 0;
+   padding: 0;
+   .nav-lead {
+      height: 100%;
+      padding: 15px 0 7px 0;
+      width: 50%;
+      float: left;
+      position: relative;
+      svg {
+         @include transition(0.3s);
+         height: 40px;
+         width: 40px;
+         float: left;
+      }
+      h1 {
+         color: $primary;
+         transform: scaleX(1);
+         transform-origin: top left;
+         transform-style: preserve-3D;
+         transition: transform 0.3s linear;
+         -ms-transition: transform 0.3s linear;
+         -webkit-transition: transform 0.3s linear;
+         -moz-transition: transform 0.3s linear;
+         font-size: 35px;
+         margin: 0;
+         padding: 0;
+         line-height: 1;
+         font-weight: 300;
+         float: left;
+         position: absolute;
+         bottom: 3px;
+         left: 45px;
+      }
+   }
+
+   // Mobile nav toggle
+   .toggle-menu {
+      display: none;
+      float: right;
+      cursor: pointer;
+      position: relative;
+      padding: 35px 10px;
+      width: 60px;
+      height: 75px;
+      span, span:before, span:after {
+         @include transition(150ms);
+         display: block;
+         height: 3px;
+         width: 40px;
+         background-color: $primary;
+         content: '';
+         position: absolute;
+         &:before {
+            top: -12px;
+         }
+         &:after {
+            bottom: -12px
+         }
+      }
+      &.cross {
+         span, span:before, span:after {
+            @include transition(150ms);
+         }
+         span {
+            background-color: transparent;
+            &:before {
+               top: 0;
+               transform: rotate(45deg);
+            }
+            &:after {
+               bottom: 0;
+               transform: rotate(-45deg);
+            }
+         }
+      }
+      @include transition(0.3s);
+      @media (max-width: 992px) {
+         display: block;
+      }
+   }
+
+   // Navigation items
+   .nav-items {
+      @include transition(0.3s);
+      width: 50%;
+      float: left;
+      text-align: right;
+      height: 75px;
+      a {
+         line-height: 75px;
+         margin-left: 15px;
+         font-size: 15px;
+         padding: 5px 10px;
+         @include transition(0.3s);
+         color: $primary;
+         text-decoration: none;
+         &:hover {
+            @include transition(0.05s);
+            background: $primary;
+            color: white;
+            border-radius: 2px;
+         }
+      }
+      &.active {
+         display: block;
+         background: $background;
+         position: fixed;
+         top: 75px;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         a {
+            display: block;
+            width: 100%;
+            margin: 0;
+            background: $background;
+            text-align: center;
+            font-size: 1.5rem;
+            &:hover {
+               background: $primary;
+            }
+         }
+      }
+      @media (max-width: 992px) {
+         display: none;
+      }
+   }
+}
+
+
+// Highlight active menu item
+body#home .nav-items .home,
+body#about .nav-items .about,
+body#projects .nav-items .projects,
+body#contact .nav-items .contact {
+   background: $primary;
+   color: white;
+   border-radius: 2px;
+}
+
+// Shrink navigation when scrolled
+.scrolled {
+   height: 35px;
+   .toggle-menu {
+      padding: 15px 10px;
+      height: 35px;
+      span, span:before, span:after {
+         height: 2px;
+         &:before {
+            top:-10px;
+         }
+         &:after {
+            bottom:-10px
+         }
+      }
+   }
+   .nav-lead {
+      padding: 5px 0 5px 0;
+      svg {
+         width: 20px;
+         height: 20px;
+         rect#Rectangle-23-Copy-5,
+         path#Rectangle-23-Copy-6 {
+            @include transition(150ms);
+            fill: $primary;
+         }
+         &:hover {
+            rect#Rectangle-23-Copy-5,
+            path#Rectangle-23-Copy-6 {
+               fill: $action;
+            }
+         }
+      }
+      h1 {
+         transform: translateY(-50px);
+      }
+   }
+   .nav-items {
+      height: 35px;
+      a {
+         line-height: 35px;
+         margin-left: 15px;
+         font-size: 15px;
+         padding: 5px 10px;
+      }
+      &.active {
+         top: 35px;
+      }
+   }
+}

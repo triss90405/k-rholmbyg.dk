@@ -1,0 +1,30 @@
+.map {
+   position: relative;
+   .map-overlay {
+      position: absolute;
+      top: 0;
+      left: 120px;
+      height: 100%;
+      width: 350px;
+      background: rgba(228,73,28,0.8);
+      padding: 10px;
+      @media (max-width: 768px) {
+         left: 0;
+         background: rgba(228,73,28,0.8);
+         width: 100%;
+         text-align: center;
+      }
+      h1 {
+         color: white;
+         text-shadow: 1px 1px black;
+      }
+      h2 {
+         color: white;
+         text-shadow: 1px 1px black;
+         span {
+            font-weight: 400;
+         }
+      }
+
+   }
+}

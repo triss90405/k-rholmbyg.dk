@@ -1,0 +1,16 @@
+//Tools - Often thrid party stuff or global variables
+@import '1-tools/normalize';
+@import '1-tools/gridder';
+@import '1-tools/colors';
+@import '1-tools/mixins';
+@import '1-tools/open-sans';
+
+//Base - CSS used throughout the project or app, e.g. a navigation
+@import '2-base/navigation';
+@import '2-base/typography';
+@import '2-base/buttons';
+@import '2-base/footer';
+
+//Pages - Styles specific to the different pages
+@import '3-pages/frontpage';
+@import '3-pages/projects';
